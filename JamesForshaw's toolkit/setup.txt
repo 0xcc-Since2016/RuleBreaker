@@ -1,0 +1,9 @@
+The following is the list of quick configuration steps you need to take to set up the various tools provided for this workshop. This assumes you’ve got a 32 bit install of Windows 10 Anniversary Edition (14393)
+
+1) Unpack the archive to a directory in the root of the C drive, for example c:\workshop
+2) From an admin command prompt run the following:
+  * bcdedit /set TESTSIGNING ON
+  * sc create workshop binPath= c:\workshop\driver\x86\LogicalEopWorkshopDriver.sys type= kernel start= demand
+  * powershell -Command "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass"
+3) Reboot the machine
+4) Start the driver using ‘sc start workshop’. Check that it doesn’t print any errors.
